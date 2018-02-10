@@ -2029,7 +2029,7 @@
 111 150 -1 -1 2 1 #"\0"
 0 -1 1 #"\0"
 1.0 0 -1 -1 -1 -1 -1 -1 0 0 0 0 0 1 0.0 0.0 0.0 0.0 0.0 0.0 255 165 0 63
-111 150 -1 -1           0 75 0 4 3 85
+111 150 -1 -1           0 73 0 4 3 85
 (
  #";; The first three lines of this file were inserted by DrRacket. The"
  #"y record metadata"
@@ -2187,6 +2187,4 @@
 0 0 17 3 23 #";; Template rules used:"
 0 0 24 29 1 #"\n"
 0 0 17 3 25 #";;  - Atomic Non-Distinct"
-0 0 24 29 1 #"\n"
-0 0 24 29 1 #"\n"
 0           0
