@@ -2071,7 +2071,7 @@
 0 -1 -1 2 1 #"\0"
 0 -1 1 #"\0"
 1.0 0 90 -1 -1 -1 -1 -1 0 0 0 0 0 0 0.0 0.0 0.0 1.0 1.0 1.0 0 0 255 0 0
-0 -1 -1           0 263 0 4 3 85
+0 -1 -1           0 264 0 4 3 85
 (
  #";; The first three lines of this file were inserted by DrRacket. The"
  #"y record metadata"
@@ -2325,7 +2325,7 @@
 0 0 25 3 1 #"("
 0 0 14 3 12 #"check-expect"
 0 0 25 3 2 #" ("
-0 0 14 3 18 #"countdown-to-image"
+0 0 14 3 16 #"countdown->image"
 0 0 25 3 1 #" "
 0 0 14 3 5 #"false"
 0 0 25 3 3 #") ("
@@ -2341,7 +2341,7 @@
 0 0 25 3 1 #"("
 0 0 14 3 12 #"check-expect"
 0 0 25 3 2 #" ("
-0 0 14 3 18 #"countdown-to-image"
+0 0 14 3 16 #"countdown->image"
 0 0 25 3 1 #" "
 0 0 22 3 1 #"5"
 0 0 25 3 3 #") ("
@@ -2359,7 +2359,7 @@
 0 0 25 3 1 #"("
 0 0 14 3 12 #"check-expect"
 0 0 25 3 2 #" ("
-0 0 14 3 18 #"countdown-to-image"
+0 0 14 3 16 #"countdown->image"
 0 0 25 3 1 #" "
 0 0 19 3 10 #"\"complete\""
 0 0 25 3 3 #") ("
@@ -2373,11 +2373,9 @@
 0 0 25 3 2 #"))"
 0 0 25 29 1 #"\n"
 0 0 25 29 1 #"\n"
-0 0 17 3 66
-(
- #";(define (countdown-in-image c) (square 0 \"solid\" \"white\")) ; st"
- #"ub"
-) 0 0 25 29 1 #"\n"
+0 0 17 3 26 #";(define (countdown->image"
+0 0 17 3 38 #" c) (square 0 \"solid\" \"white\")) ; stub"
+0 0 25 29 1 #"\n"
 0 0 25 29 1 #"\n"
 0 0 17 3 37 #";<Template is redundant of countdown>"
 0 0 25 29 1 #"\n"
@@ -2385,7 +2383,7 @@
 0 0 25 3 1 #"("
 0 0 15 3 6 #"define"
 0 0 25 3 2 #" ("
-0 0 14 3 18 #"countdown-to-image"
+0 0 14 3 16 #"countdown->image"
 0 0 25 3 1 #" "
 0 0 14 3 1 #"c"
 0 0 25 3 1 #")"
