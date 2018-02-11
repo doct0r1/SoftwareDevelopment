@@ -10,5 +10,5 @@ This programming course takes a unique approach, as it focuses on learning a sys
 **Project**
 - List The Course Project
 
-** *My Track* **
+* **My Track** *
 - Will be Listed Here - 
