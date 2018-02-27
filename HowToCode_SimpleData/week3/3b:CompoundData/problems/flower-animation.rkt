@@ -44,7 +44,7 @@
 ;; =========
 
 ;; Flower -> Flower
-;; starts the animation: start with (main (make-flower (/WIDTH 2) (/ HEIGHT 2) 0))
+;; starts the animation: start with (main (make-flower (/ WIDTH 2) (/ HEIGHT 2) 0))
 
 (define (main f)
   (big-bang f
