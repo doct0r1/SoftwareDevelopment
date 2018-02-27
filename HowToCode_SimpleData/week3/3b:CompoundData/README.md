@@ -9,3 +9,9 @@ In this module you will learn how to design compound data definitions to represe
 
 ### Water Balloon Problem
 ![Alt text](https://github.com/doct0rX/SoftwareDevelopment/blob/master/HowToCode_SimpleData/week3/3b:CompoundData/lecture/screens/Screen%20Shot%202018-02-27%20at%202.50.14%20PM.png)
+
+-----
+
+### Flower Planting Problem
+Video embedded into the photo > click the image
+[![Alt text](https://github.com/doct0rX/SoftwareDevelopment/blob/master/HowToCode_SimpleData/week3/3b:CompoundData/lecture/screens/Screen%20Shot%202018-02-27%20at%204.07.31%20PM.png)](https://youtu.be/fTs_LDd9nkk)
