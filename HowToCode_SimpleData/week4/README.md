@@ -26,7 +26,7 @@ Suppose you have the following data type comments:
 
 ```
 
-As this course requires careful and detailed study, from the final answer you can see that about 51% of student summit the wrong answer! may they didn't **grok** the _Reference_ Subject.
+As this course requires careful and detailed study, from the final answer you can see that about 51% of student summit the wrong answer! may they didn't **grok the _Reference_** Subject.
 
 but what I can see that reading it carefully you can find out
 ```;; Group is (make-group Section Student Student Student) ```
