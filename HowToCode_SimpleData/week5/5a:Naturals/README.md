@@ -1,0 +1,1 @@
+![](https://github.com/doct0rX/SoftwareDevelopment/blob/12d587a026153335a902bb656d549781a979bd77/HowToCode_SimpleData/week5/5a:Naturals/screens/screencapture-courses-edx-org-courses-course-v1-UBCx-HtC1x-2T2017-courseware-87ce6b0583bd4beaac607bd55f1eb2cd-7fddefccc7a84761b7e2d41f42b8e0f6-2018-03-17-15_13_57.png)
