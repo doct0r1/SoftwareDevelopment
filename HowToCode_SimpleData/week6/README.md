@@ -1,1 +1,1 @@
-![](./screens/*.png)
+![](https://github.com/doct0rX/SoftwareDevelopment/blob/master/HowToCode_SimpleData/week6/screens/screencapture-courses-edx-org-courses-course-v1-UBCx-HtC1x-2T2017-courseware-c49c84f1b4f247f9b927773a8defac50-80aa1d291e9b41cea0c64ca2fa994830-2018-03-23-15_29_29.png)
