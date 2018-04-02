@@ -18,4 +18,4 @@ This programming course takes a unique approach, as it focuses on learning a sys
 
 **_My Track_**
 
-![](https://github.com/doct0rX/SoftwareDevelopment/blob/master/HowToCode_SimpleData/finalProject/screens/Screen%20Shot%202018-04-02%20at%204.11.07%20PM.png) 
+![](https://github.com/doct0rX/SoftwareDevelopment/blob/master/HowToCode_SimpleData/finalProject/screens/Screen%20Shot%202018-04-02%20at%204.11.07%20PM.png)
