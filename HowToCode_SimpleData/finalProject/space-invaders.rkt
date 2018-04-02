@@ -1,6 +1,9 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname space-invaders) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;;
+;; This Game needs some fixes with code syntax. and finish the rest of functions and good to GO;
+;; Delete first 3 lines after finishing the game implementation.
 (require 2htdp/universe)
 (require 2htdp/image)
 
@@ -114,21 +117,112 @@
 ;; Game -> Game
 ;; start the world with (main empty)
 ;; 
-(define (main ws)
-  (big-bang ws                   ; Game
-            (on-tick   tock)     ; Game -> Game
-            (to-draw   render)   ; Game -> Image
-            (stop-when ...)      ; Game -> Boolean
-            (on-mouse  ...)      ; Game Integer Integer MouseEvent -> WS
-            (on-key    ...)))    ; Game KeyEvent -> Game
+(define (main g)
+  (big-bang g                    ; Game
+    (on-tick   tock)     ; Game -> Game
+    (to-draw   render)   ; Game -> Image
+    (stop-when ...)      ; Game -> Boolean
+    (on-mouse  ...)      ; Game Integer Integer MouseEvent -> WS
+    (on-key    ...)))    ; Game KeyEvent -> Game
+
 
 ;; Game -> Game
 ;; produce the next invader and update the current invaders position
-;; !!!
-(define (tock ws) ...)
+
+(check-expect (tock G0) (make-game (cons (make-invader (+ INVADER-X-SPEED 0) (+ INVADER-Y-SPEED 0)  11) empty) empty T0))
+(check-expect (tock G1) (make-game (cons (make-invader (+ INVADER-X-SPEED 0) (+ INVADER-Y-SPEED 0) -11) empty) empty T1))
+(check-expect (tock G2)
+              (make-game (cons (make-invader (+ INVADER-X-SPEED 150) (+ INVADER-Y-SPEED 100) 12) (cons (make-invader (+ INVADER-X-SPEED 0) (+ INVADER-Y-SPEED 0)  11) empty))
+                         (list (make-missile 150 (- MISSILE-SPEED 300))) T1))
+(check-expect (tock G3)
+              (make-game (cons (make-invader (+ INVADER-X-SPEED 150) (+ INVADER-Y-SPEED 100) 12) (cons (make-invader (+ INVADER-X-SPEED 150) (+ INVADER-Y-SPEED HEIGHT) -10) (cons (make-invader (+ INVADER-X-SPEED 0) (+ INVADER-Y-SPEED 0)  11) empty)))
+                         (list (make-missile 150 (- MISSILE-SPEED 300))) T1))
+
+;(define (tock g) (make-game empty empty T0))  ;stub
+
+;<templates from Game constract
+(define (tock g)
+  (make-game (move-invaders (bounce-invader (increase-invader (game-invaders g))))
+             (lunch-missile (game-missiles g))
+             (game-tank g)))
+
+
+;; ListOfInvaders -> ListOfInvaders
+;; produce one more invader to current state of the game
+
+(check-expect (increase-invader empty) (cons (make-invader INVADER-X-SPEED INVADER-X-SPEED 11) empty))
+(check-expect (increase-invader (list I1)) (cons I1 (cons (make-invader INVADER-X-SPEED INVADER-X-SPEED 11) empty)))
+(check-expect (increase-invader (list I1)) (append (list I1) (list (make-invader INVADER-X-SPEED INVADER-X-SPEED 11))))
+
+;(define (increase-invader loi) loi)  ;stub
+
+;<template from invader
+
+(define (increase-invader invader)
+  (append invader (list (make-invader INVADER-X-SPEED INVADER-X-SPEED 11))))
+
+
+(define (lunch-missile lom) lom) ;; will be removed ; stub
+
+
+;; ListOfInvaders -> ListOfInvaders
+;; keep track of invaders in the width of screen
+;;     bounce the invader if hit the side of MTS
+
+;(check-expect (bounce-invader empty) empty)
+;(check-expect (bounce-invader (list (make-invader WIDTH 100 12))) (list (make-invader WIDTH 100 12)))
+;(check-expect (bounce-invader (list (make-invader (+ WIDTH INVADER-X-SPEED) 100 12))) (list (make-invader WIDTH 100 -12)))
+;(check-expect (bounce-invader (list I1 (make-invader (+ WIDTH INVADER-X-SPEED) 100 12))) (list I1 (make-invader WIDTH 100 -12)))
+
+;; This Function Still not implemented
+
+(define (bounce-invader loi) loi)  ;stub
+
+#;
+(define (bounce-invader loi)
+  (cond [(empty? loi) empty]
+        [cond 
+          [(> (invader-x (first loi)) WIDTH) (make-invader (invader-x (first loi)) (invader-y (first loi)) (- (invader-dx (first loi))))]
+          [(< (invader-x (first loi))     0) (make-invader (invader-x (first loi)) (invader-y (first loi)) (- (invader-dx (first loi))))]
+          [(<= (invader-x (first loi)) WIDTH) (make-invader (invader-x (first loi)) (invader-y (first loi)) (invader-dx (first loi)))]]
+        (bounce-invader (rest loi))))
+#;
+(define (bounce-invader loi)
+  (cond [(empty? loi) empty]
+        [else
+         (> (invader-x (first loi)) WIDTH) (make-invader (invader-x (first loi)) (invader-y (first loi)) (- (invader-dx (first loi))))
+         (make-invader (invader-x (first loi)) (invader-y (first loi)) (- (invader-dx (first loi))))
+         (bounce-invader (rest loi))]))
+
+
+;; ListOfInvaders -> ListOfInvaders
+;; produce next invaders x, y position
+
+(check-expect (move-invaders empty) empty)
+(check-expect (move-invaders (list I1)) (list (make-invader (+ INVADER-X-SPEED 150) (+ INVADER-Y-SPEED 100) 12)))
+(check-expect (move-invaders (list I1 I2)) (list (make-invader (+ INVADER-X-SPEED 150) (+ INVADER-Y-SPEED 100) 12) (make-invader (+ INVADER-X-SPEED 150) (+ INVADER-Y-SPEED HEIGHT) -10)))
+
+;(define (move-invaders loi) loi)  ;stub
+
+(define (move-invaders loi)
+  (cond [(empty? loi) empty]
+        [else
+         (make-invader (+ (invader-x (first loi)) INVADER-X-SPEED) (+ (invader-y (first loi)) INVADER-Y-SPEED) (invader-dx (first loi)))
+              (move-invaders (rest loi))]))
 
 
 ;; Game -> Image
-;; render current game on MTS at proper x, y position 
+;; render current state of the game on MTS at proper x, y position 
 ;; !!!
-(define (render ws) ...)
+(define (render g) ...)
+
+
+;; Game KeyEvent -> Game
+;; Space bar for lunching the missle
+;; Left  arrow -- Move  left
+;; Right arrow -- move right
+;; !!!
+(define (handle-key g ke)
+  (cond [(key=? ke " ") (... g)]
+        [else 
+         (... g)]))
