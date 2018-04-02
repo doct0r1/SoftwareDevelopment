@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname space-invaders-starter) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname space-invaders) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 (require 2htdp/universe)
 (require 2htdp/image)
 
@@ -107,3 +107,28 @@
 (define G2 (make-game (list I1) (list M1) T1))
 (define G3 (make-game (list I1 I2) (list M1 M2) T1))
 
+
+;; =================
+;; Functions:
+
+;; Game -> Game
+;; start the world with (main empty)
+;; 
+(define (main ws)
+  (big-bang ws                   ; Game
+            (on-tick   tock)     ; Game -> Game
+            (to-draw   render)   ; Game -> Image
+            (stop-when ...)      ; Game -> Boolean
+            (on-mouse  ...)      ; Game Integer Integer MouseEvent -> WS
+            (on-key    ...)))    ; Game KeyEvent -> Game
+
+;; Game -> Game
+;; produce the next invader and update the current invaders position
+;; !!!
+(define (tock ws) ...)
+
+
+;; Game -> Image
+;; render current game on MTS at proper x, y position 
+;; !!!
+(define (render ws) ...)
