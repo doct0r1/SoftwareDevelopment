@@ -4,7 +4,7 @@ How to Code: Simple Data
 Design more CompleX programs, using new data structures, abstraction, and generative recursion.
 
 <p>
-<br /> <div class="separator" style="clear: both; text-align: center;"> <a href=""><img alt="" border="0" height="411" src="https://github.com/doct0rX/SoftwareDevelopment/blob/master/HowToCode_SimpleData/finalProject/screens/Screen%20Shot%202018-04-02%20at%204.15.04%20PM.png" width="911" /></a></div>
+<br /> <div class="separator" style="clear: both; text-align: center;"> <a href=""><img alt="" border="0" height="411" src="https://github.com/doct0rX/SoftwareDevelopment/blob/master/HowToCode_CompleXData/screens/compleXData.jpg" width="911" /></a></div>
 </p>
 
 About this course
