@@ -1,4 +1,4 @@
-How to Code: Simple Data
+How to Code: CompleX Data
 ===============
 
 Design more CompleX programs, using new data structures, abstraction, and generative recursion.
