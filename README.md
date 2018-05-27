@@ -8,6 +8,9 @@ UCBx
 <br /> <div class="separator" style="clear: both; text-align: center;"> <a href="https://www.cs.ubc.ca/news/2017/03/ubc-launches-edx-micromasters-program-software-development"><img alt="" border="0" height="571" src="https://github.com/doct0rX/SoftwareDevelopment/blob/master/screens/masters.jpg" width="1000" /></a></div>
 </p>
 
+> The "How to Code" courses are based on [How to Design Programs](http://www.htdp.org/), which itself is an attempt at rethinking the pedagogical approach of The Structure and Interpretation of Computer Programs.    
+> Another option is using a course based on SICP such as this [MIT OCW course](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/index.htm), but that course's links to the online textbook are broken.
+
 ## 1.How To Code: Simple Data
 
 ### **_Project_**: _Space Invaders_
