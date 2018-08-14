@@ -16,3 +16,15 @@ The cross product of the types comment table first provides us with a way to cle
 
 b: Local
 --------
+
+In this module we look at a new technique for improving the structure of code. Most of the problems in this module involve refactoring existing programs -- so there's relatively little new coding to do. But that doesn't mean you won't be designing programs! One of the things that separates good programmers from the other kind is taking the time to improve the structure of their code once it is written. This material is super important, and... it's really important to practice doing it!
+
+We'll learn local expressions which are a new kind of expression in the Intermediate Student Language (ISL) that makes it possible to write definitions (constants, functions and structures) that are only visible within the local expression. We will see how to use local expressions to encapsulate "private" helper functions. We will also use local to avoid redundant computation.
+
+### Learning Goals
+
+- Be able to write well-formed local expressions.
+- Be able to diagram lexical scoping on top of expressions using local.
+- Be able to hand-evaluate local expressions.
+- Be able to use local to encapsulate function definitions.
+- Be able to use local to avoid redundant computation.
