@@ -10,7 +10,7 @@ UCBx
 
 > The "How to Code" courses are based on [How to Design Programs](http://www.htdp.org/), which itself is an attempt at rethinking the pedagogical approach of The Structure and Interpretation of Computer Programs.
 
-## [1.How To Code: Simple Data](./HowToCode_SimpleData)
+## [1. How To Code: Simple Data](./HowToCode_SimpleData)
 
 ### **_Project_**: _Space Invaders_
 
@@ -24,10 +24,10 @@ Click Image to watch the Demo
 
 ------
 
-## [2.How To Code: CompleX Data](./HowToCode_CompleXData)
+## [2. How To Code: CompleX Data](./HowToCode_CompleXData)
 
 ### **_Project_**: Tic Tac Toe
-p><br /> <div class="separator" style="clear: both; text-align: center;"> <a href=""><img alt="" border="0" height="511" src="./HowToCode_CompleXData/screens/tic.jpg" width="911" /></a></div>
+<p><br /> <div class="separator" style="clear: both; text-align: center;"> <a href=""><img alt="" border="0" height="511" src="./HowToCode_CompleXData/screens/tic.jpg" width="911" /></a></div>
 </p>
 
 ### **_My Track_**
@@ -36,4 +36,4 @@ p><br /> <div class="separator" style="clear: both; text-align: center;"> <a hre
 
 ------
 
-## [3.Software Construction: Data Abstraction](.)
+## [3. Software Construction: Data Abstraction](.)
