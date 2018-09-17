@@ -4,7 +4,7 @@ How to Code: CompleX Data
 Design more CompleX programs, using new data structures, abstraction, and generative recursion.
 
 <p>
-<br /> <div class="separator" style="clear: both; text-align: center;"> <a href=""><img alt="" border="0" height="411" src="https://github.com/doct0rX/SoftwareDevelopment/blob/master/HowToCode_CompleXData/screens/compleXData.jpg" width="911" /></a></div>
+<br /> <div class="separator" style="clear: both; text-align: center;"> <a href=""><img alt="" border="0" height="411" src="./screens/compleXData.jpg" width="911" /></a></div>
 </p>
 
 About this course
@@ -16,4 +16,9 @@ By learning how to capture common data and control structures using abstraction,
 
 ### **Project**
 
+![project Screen](./screens/tic.jpg)
+![](./screens/octothorpe.png)
+
 ### **My Track**
+
+![project Screen](./screens/ScreenShot2018-09-17at3.32.56PM.png)
