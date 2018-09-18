@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_librarysystemquiz1" default="compile.module.librarysystemquiz1">
+  <dirname property="module.librarysystemquiz1.basedir" file="${ant.file.module_librarysystemquiz1}"/>
+  
+  <property name="module.jdk.home.librarysystemquiz1" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.librarysystemquiz1" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.librarysystemquiz1" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.librarysystemquiz1" value="-encoding UTF-8 -source 7 -target 7 ${compiler.args}"/>
+  
+  <property name="librarysystemquiz1.output.dir" value="${module.librarysystemquiz1.basedir}/../out/production/LibrarySystemQuiz1"/>
+  <property name="librarysystemquiz1.testoutput.dir" value="${module.librarysystemquiz1.basedir}/../out/test/LibrarySystemQuiz1"/>
+  
+  <path id="librarysystemquiz1.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="librarysystemquiz1.module.production.classpath">
+    <path refid="${module.jdk.classpath.librarysystemquiz1}"/>
+    <pathelement location="${path.variable.maven_repository}/junit/junit/4.12/junit-4.12.jar"/>
+    <pathelement location="${path.variable.maven_repository}/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
+  </path>
+  
+  <path id="librarysystemquiz1.runtime.production.module.classpath">
+    <pathelement location="${librarysystemquiz1.output.dir}"/>
+    <pathelement location="${path.variable.maven_repository}/junit/junit/4.12/junit-4.12.jar"/>
+    <pathelement location="${path.variable.maven_repository}/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
+  </path>
+  
+  <path id="librarysystemquiz1.module.classpath">
+    <path refid="${module.jdk.classpath.librarysystemquiz1}"/>
+    <pathelement location="${librarysystemquiz1.output.dir}"/>
+    <pathelement location="${path.variable.maven_repository}/junit/junit/4.12/junit-4.12.jar"/>
+    <pathelement location="${path.variable.maven_repository}/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
+  </path>
+  
+  <path id="librarysystemquiz1.runtime.module.classpath">
+    <pathelement location="${librarysystemquiz1.testoutput.dir}"/>
+    <pathelement location="${librarysystemquiz1.output.dir}"/>
+    <pathelement location="${path.variable.maven_repository}/junit/junit/4.12/junit-4.12.jar"/>
+    <pathelement location="${path.variable.maven_repository}/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.librarysystemquiz1">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.librarysystemquiz1">
+    <patternset refid="excluded.from.module.librarysystemquiz1"/>
+  </patternset>
+  
+  <path id="librarysystemquiz1.module.sourcepath">
+    <dirset dir="${module.librarysystemquiz1.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.librarysystemquiz1" depends="compile.module.librarysystemquiz1.production,compile.module.librarysystemquiz1.tests" description="Compile module LibrarySystemQuiz1"/>
+  
+  <target name="compile.module.librarysystemquiz1.production" depends="register.custom.compilers" description="Compile module LibrarySystemQuiz1; production classes">
+    <mkdir dir="${librarysystemquiz1.output.dir}"/>
+    <javac2 destdir="${librarysystemquiz1.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.librarysystemquiz1}/javac">
+      <compilerarg line="${compiler.args.librarysystemquiz1}"/>
+      <bootclasspath refid="librarysystemquiz1.module.bootclasspath"/>
+      <classpath refid="librarysystemquiz1.module.production.classpath"/>
+      <src refid="librarysystemquiz1.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.librarysystemquiz1"/>
+    </javac2>
+    
+    <copy todir="${librarysystemquiz1.output.dir}">
+      <fileset dir="${module.librarysystemquiz1.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.librarysystemquiz1.tests" depends="register.custom.compilers,compile.module.librarysystemquiz1.production" description="compile module LibrarySystemQuiz1; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.librarysystemquiz1" description="cleanup module">
+    <delete dir="${librarysystemquiz1.output.dir}"/>
+    <delete dir="${librarysystemquiz1.testoutput.dir}"/>
+  </target>
+</project>
