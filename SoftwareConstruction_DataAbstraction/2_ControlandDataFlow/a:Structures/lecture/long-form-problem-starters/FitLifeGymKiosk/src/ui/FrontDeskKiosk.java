@@ -11,9 +11,7 @@ import model.weights.Dumbbell;
 import model.weights.Plate;
 import model.weights.WeightMachine;
 
-import static model.members.MembershipLevel.BASIC;
-import static model.members.MembershipLevel.CLASSES;
-import static model.members.MembershipLevel.DELUXE;
+import static model.members.MembershipLevel.*;
 
 public class FrontDeskKiosk {
 
@@ -24,7 +22,7 @@ public class FrontDeskKiosk {
 
     public static void main(String[] args) {
         FrontDeskKiosk frontDeskKiosk = new FrontDeskKiosk();
-        Kiosk kiosk = new Kiosk(frontDeskKiosk.getGym());
+        ui.Kiosk kiosk = new Kiosk(frontDeskKiosk.getGym());
         System.out.println("Welcome to FitLifeGym!");
 
         kiosk.handleUserInput();
