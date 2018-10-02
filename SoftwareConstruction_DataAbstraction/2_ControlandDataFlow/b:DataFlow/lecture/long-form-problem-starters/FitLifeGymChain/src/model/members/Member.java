@@ -36,7 +36,7 @@ public class Member {
 
     // MODIFIES: this
     // EFFECTS: adds current date to member's visit history
-    public void checkIn(){
+    public void checkIn() {
         Calendar current = Calendar.getInstance();
         int day = current.get(Calendar.DAY_OF_MONTH);
         int month = current.get(Calendar.MONTH);
