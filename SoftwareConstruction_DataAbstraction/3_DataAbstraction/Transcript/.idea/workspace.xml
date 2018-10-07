@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98981824-a89b-4303-b0b0-2dd98685d5fd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ui/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/TranscriptTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../2_ControlandDataFlow/a:Structures/lecture/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../2_ControlandDataFlow/a:Structures/lecture/.idea/lecture.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../2_ControlandDataFlow/a:Structures/lecture/.idea/misc.xml" beforeDir="false" />
@@ -15,10 +15,10 @@
       <change beforePath="$PROJECT_DIR$/../../2_ControlandDataFlow/b:DataFlow/problems/control-and-data-flow-practice-projects/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2_ControlandDataFlow/b:DataFlow/problems/control-and-data-flow-practice-projects/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../2_ControlandDataFlow/b:DataFlow/problems/control-and-data-flow-solutions/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../2_ControlandDataFlow/b:DataFlow/problems/control-and-data-flow-solutions/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Transcript/model/Transcript.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Transcript/model/Transcript.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Transcript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Transcript.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../a:SpecifyingAndUsing/data-abstraction-lecture-starters/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../a:SpecifyingAndUsing/data-abstraction-lecture-starters/.idea/workspace.xml" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,22 +28,29 @@
     <session id="-796309681">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="530" />
+          <entry key="java" value="551" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="530" />
+          <entry key="JAVA" value="551" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="1" />
+          <entry key="java" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="1" />
+          <entry key="JAVA" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -54,21 +61,27 @@
         <entry file="file://$PROJECT_DIR$/src/ui/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/Transcript.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/model/Transcript.java">
+        <entry file="file://$PROJECT_DIR$/src/test/TranscriptTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+            <state relative-caret-position="306">
+              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
               <folding>
-                <element signature="e#942#943#0" expanded="true" />
-                <element signature="e#988#989#0" expanded="true" />
-                <element signature="e#1035#1036#0" expanded="true" />
-                <element signature="e#1077#1078#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,6 +104,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/ui/Main.java" />
         <option value="$PROJECT_DIR$/src/model/Transcript.java" />
+        <option value="$PROJECT_DIR$/src/test/TranscriptTest.java" />
       </list>
     </option>
   </component>
@@ -100,13 +114,17 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="1120" />
+  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -129,17 +147,29 @@
               <item name="Transcript" type="b2602c69:ProjectViewProjectNode" />
               <item name="Transcript" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Transcript" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Transcript" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538742463589" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538922103708" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -153,7 +183,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.TranscriptTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ui.Main" />
       <module name="Transcript" />
@@ -167,8 +197,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TranscriptTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Transcript" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.TranscriptTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TranscriptTest.testTemplate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Transcript" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.TranscriptTest" />
+      <option name="METHOD_NAME" value="testTemplate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.TranscriptTest.testTemplate" />
+      <item itemvalue="JUnit.TranscriptTest" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TranscriptTest" />
+        <item itemvalue="JUnit.TranscriptTest.testTemplate" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -178,25 +245,35 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a3c00b20-a100-45da-b8bc-db0c0e6ee0f7" name="Default Changelist" comment="" />
+      <changelist id="98981824-a89b-4303-b0b0-2dd98685d5fd" name="Default Changelist" comment="" />
       <created>1538648913510</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1538648913510</updated>
       <workItem from="1538648914728" duration="6000000" />
-      <workItem from="1538734072691" duration="4051000" />
+      <workItem from="1538734072691" duration="6358000" />
+      <workItem from="1538920605301" duration="345000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2540000" />
+    <option name="totallyTimeSpent" value="5192000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1120" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49902725" visible="true" weight="0.25239617" />
-      <window_info id="Structure" order="1" sideWeight="0.50097275" side_tool="true" visible="true" weight="0.25239617" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49805447" visible="true" weight="0.2550586" />
+      <window_info id="Structure" order="1" sideWeight="0.5019455" side_tool="true" visible="true" weight="0.2550586" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
@@ -226,6 +303,9 @@
       <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -238,19 +318,23 @@
     <entry file="file://$PROJECT_DIR$/src/ui/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Transcript.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+        <state relative-caret-position="612">
+          <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/TranscriptTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
           <folding>
-            <element signature="e#942#943#0" expanded="true" />
-            <element signature="e#988#989#0" expanded="true" />
-            <element signature="e#1035#1036#0" expanded="true" />
-            <element signature="e#1077#1078#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
