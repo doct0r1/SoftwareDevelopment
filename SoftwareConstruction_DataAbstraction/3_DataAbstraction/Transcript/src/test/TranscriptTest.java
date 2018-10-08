@@ -10,8 +10,8 @@ public class TranscriptTest {
     private Transcript testTranscript;
 
     @Before
-    public void setUp(){
-        testTranscript = new Transcript("Student Name", 1000);
+    public void setup(){
+        testTranscript = new Transcript("Mustafa", 999);
         //TODO: write new values in testTranscript constructor
     }
 
