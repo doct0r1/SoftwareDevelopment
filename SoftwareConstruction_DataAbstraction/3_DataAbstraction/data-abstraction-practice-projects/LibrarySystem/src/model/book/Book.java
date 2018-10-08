@@ -13,33 +13,33 @@ public class Book {
     private boolean isOnLoan;
 
     public Book(String title, String author, BookType type, int year, int ed) {
-        //TODO: complete the implementation of this method
+        this.title = title;
+        this.author = author;
+        this.type = type;
+        this.year = year;
+        this.edition = ed;
+        this.homeLibrary = null;
+        this.isOnLoan = false;
     }
 
     // getters
     public String getTitle() {
-        //TODO: complete the implementation of this method
-        return null;
+        return title;
     }
     public String getAuthor() {
-        //TODO: complete the implementation of this method
-        return null;
+        return author;
     }
     public BookType getType() {
-        //TODO: complete the implementation of this method
-        return null;
+        return type;
     }
     public int getYear() {
-        //TODO: complete the implementation of this method
-        return 0;
+        return year;
     }
     public int getEdition() {
-        //TODO: complete the implementation of this method
-        return 0;
+        return edition;
     }
     public Library getHomeLibrary() {
-        //TODO: complete the implementation of this method
-        return null;
+        return homeLibrary;
     }
 
     // MODIFIES: this
@@ -48,22 +48,21 @@ public class Book {
 
     // EFFECTS: return true if this book is on loan, else return false
     public boolean onLoan() {
-        //TODO: complete the implementation of this method
-        return false;
+        return isOnLoan;
     }
 
     // MODIFIES: this
     // EFFECTS: set the book to be on loan
     public void nowOnLoan() {
-        //TODO: complete the implementation of this method
+        this.isOnLoan = true;
     }
 
     // REQUIRES: home != null
     // MODIFIES: this
     // EFFECTS: sets this book's home library to the one passed as parameter
     public void setHomeLibrary(Library home) {
-        //TODO: complete the implementation of this method
+        assert(home != null);
+        this.homeLibrary = home;
+        home.storeBook(this);
     }
-
-
 }
