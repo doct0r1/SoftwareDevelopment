@@ -11,7 +11,12 @@ public class FlyerDemo {
         Airplane planie = new Airplane();
         Cafe cafePlane = new Airplane();
         Flyer flyerPlane = new Airplane();
+        Flyer priPlane = new PrivatePlane();
+        PrivatePlane pp = new PrivatePlane();
 
+
+        ((PrivatePlane) priPlane).bringWarmTowels();
+        pp.bringWarmTowels();
 
         birdie.fly();
         cafePlane.serveDrinks();
@@ -21,15 +26,13 @@ public class FlyerDemo {
         fd.firstPartOfFlight(planie);
     }
 
-    public void lunchService(Cafe c){
+    private void lunchService(Cafe c){
         c.serveDrinks();
         c.serveSnacks();
     }
 
-    public void firstPartOfFlight(Airplane a){
+    private void firstPartOfFlight(Airplane a){
         a.takeOff();
         a.serveDrinks();
     }
-
-
 }
