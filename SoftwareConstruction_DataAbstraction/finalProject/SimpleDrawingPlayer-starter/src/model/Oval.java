@@ -9,6 +9,7 @@ public class Oval extends Shape {
     public Oval(Point topLeft, MidiSynth midiSynth) {
         super(topLeft, midiSynth);
         PLAYING_COLOR = new Color(231, 22, 229);
+        instrument = 11;
     }
 
     // EFFECTS: return true if this Oval contains the given Point point, else return false

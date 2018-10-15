@@ -15,7 +15,7 @@ public abstract class Shape {
     private boolean selected;
 
     private MidiSynth midiSynth;
-    private int instrument;
+    protected int instrument;
     private int playLineCoord;
 
 
