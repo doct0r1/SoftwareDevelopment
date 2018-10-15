@@ -24,4 +24,4 @@ Software Construction: Data Abstraction dives into:
 
 ### **My Track**
 
-![tracker Screen](./screens/ScreenShot)
+![tracker Screen](./screens/ScreenShot.png)
