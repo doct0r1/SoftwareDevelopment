@@ -37,3 +37,15 @@ Click Image to watch the Demo
 ------
 
 ## [3. Software Construction: Data Abstraction](./SoftwareConstruction_DataAbstraction)
+
+### **_Project_**: Simple Drawer Player
+<p><br /> <div class="separator" style="clear: both; text-align: center;"> <a href="https://youtu.be/N43Wwvk3wlg"><img alt="" border="0" height="511" src="./SoftwareConstruction_DataAbstraction/screens/ProjectShot.png" width="911" /></a></div>
+</p>
+
+### **_My Track_**
+
+![my tracker](./SoftwareConstruction_DataAbstraction/screens/ScreenShot.png)
+
+------
+
+## [3. Software Construction: Object Oriented Design](./SoftwareConstruction_ObjectOrientedDesign)
