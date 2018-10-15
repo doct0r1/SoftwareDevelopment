@@ -6,8 +6,8 @@ import sound.MidiSynth;
 import java.awt.*;
 
 
-public class Shape {
-    private static Color PLAYING_COLOR;
+public abstract class Shape {
+    protected static Color PLAYING_COLOR;
 
     private int x;
     private int y;
@@ -21,13 +21,13 @@ public class Shape {
     private int playLineCoord;
 
 
-    public Shape(Point topLeft, MidiSynth midiSynth) {
+    protected Shape(Point topLeft, MidiSynth midiSynth) {
         this((int) topLeft.getX(), (int) topLeft.getY(), 0, 0); //note to students: calls the other constructor!
         selected = false;
         this.midiSynth = midiSynth;
         instrument = 0;
         playLineCoord = 0;
-        PLAYING_COLOR = new Color(230, 158, 60);
+        PLAYING_COLOR = new Color(23, 231, 41);
     }
 
 
@@ -46,12 +46,12 @@ public class Shape {
         this.playLineCoord = playLineCoord;
     }
 
-    // EFFECTS: return true iff the given x value is within the bounds of the Shape
+    // EFFECTS: return true if the given x value is within the bounds of the Shape
     public boolean containsX(int x){
         return (this.x <= x) && (x <= this.x + width);
     }
 
-    // EFFECTS: return true iff the given y value is within the bounds of the Shape
+    // EFFECTS: return true if the given y value is within the bounds of the Shape
     public boolean containsY(int y) {
         return (this.y <= y) && (y <= this.y + height);
     }
