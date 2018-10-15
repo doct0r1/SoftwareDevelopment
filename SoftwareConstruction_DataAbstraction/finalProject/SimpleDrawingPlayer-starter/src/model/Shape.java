@@ -1,18 +1,16 @@
 package model;
 
-
 import sound.MidiSynth;
 
 import java.awt.*;
 
-
 public abstract class Shape {
-    protected static Color PLAYING_COLOR;
+    protected Color PLAYING_COLOR;
 
-    private int x;
-    private int y;
-    private int width;
-    private int height;
+    protected int x;
+    protected int y;
+    protected int width;
+    protected int height;
 
     private boolean selected;
 
@@ -57,12 +55,7 @@ public abstract class Shape {
     }
 
     // EFFECTS: return true if the given Point (x,y) is contained within the bounds of this Shape
-    public boolean contains(Point point) {
-        int point_x = point.x;
-        int point_y = point.y;
-
-        return containsX(point_x) && containsY(point_y);
-    }
+    protected abstract boolean contains(Point point);
 
     // REQUIRES: the x,y coordinates of the Point are larger than the x,y coordinates of the shape
     // MODIFIES: this
@@ -129,15 +122,10 @@ public abstract class Shape {
     }
 
     //EFFECTS: draws the shape
-    private void drawGraphics(Graphics g) {
-        g.drawRect(x, y, width, height);
-    }
+    protected abstract void drawGraphics(Graphics g);
 
     //EFFECTS: fills the shape
-    private void fillGraphics(Graphics g) {
-        g.fillRect(x, y, width, height);
-    }
-
+    protected abstract void fillGraphics(Graphics g);
 
     // EFFECTS: starts playing this Shape, where sound is dependent on the area/coordinates of the Shape
     private void play(){
