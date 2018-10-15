@@ -16,8 +16,12 @@ Software Construction: Data Abstraction dives into:
 
 ### **Project**
 
-![project Screen](./screens/)
+> [Click the image to watch the video](https://youtu.be/N43Wwvk3wlg).
+
+> [Click here to download the App](https://github.com/doct0rX/SoftwareDevelopment/releases/tag/v1).
+
+[![project Video](./screens/ProjectShot.png)](https://youtu.be/N43Wwvk3wlg)
 
 ### **My Track**
 
-![tracker Screen](./screens/)
+![tracker Screen](./screens/ScreenShot.png)
