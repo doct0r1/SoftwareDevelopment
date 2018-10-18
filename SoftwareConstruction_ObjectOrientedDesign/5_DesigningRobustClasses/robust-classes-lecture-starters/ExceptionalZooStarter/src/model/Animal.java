@@ -1,5 +1,7 @@
 package model;
 
+import exceptions.NotHungry;
+
 public class Animal {
 
     private boolean isHungry = true;
@@ -9,12 +11,12 @@ public class Animal {
     // getters
     public boolean isHungry() { return hungry; }
 
-    // REQUIRES: animal must be hungry
-    public int eat() {
+    public int eat() throws NotHungry {
+        if (!isHungry) {
+            throw new NotHungry();
+        }
         isHungry = false;
         eaten++;
         return eaten;
     }
-
-
 }

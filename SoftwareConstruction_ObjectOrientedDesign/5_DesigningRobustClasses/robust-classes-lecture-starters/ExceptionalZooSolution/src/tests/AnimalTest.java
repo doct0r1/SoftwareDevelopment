@@ -4,10 +4,10 @@ package tests;
 import exceptions.AllergyException;
 import exceptions.NotHungry;
 import model.Animal;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
+import static junit.framework.TestCase.assertTrue;
+import static junit.framework.TestCase.fail;
 
 public class AnimalTest {
 

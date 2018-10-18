@@ -11,6 +11,7 @@ public class Zoo {
 
     public static void main(String[] args) {
         List<Animal> animals = new ArrayList<>();
+        System.out.println("Zoo is Open for Business!");
         for (int i = 0; i < 15; i++) {
             animals.add(new Animal());
         }
