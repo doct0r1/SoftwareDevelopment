@@ -1,6 +1,7 @@
 package ui;
 
 import exceptions.BrokeException;
+import exceptions.MessyError;
 import model.Animal;
 import model.Keeper;
 import model.Manager;
@@ -22,8 +23,11 @@ public class Zoo {
             manager.manage();
         } catch (BrokeException e) {
             System.out.println("Reduce Cost!!!");
+        }catch (MessyError messyError) {
+            System.out.println("Keeper you are fired.");
         } finally {
             System.out.println("...profits");
         }
+        System.out.println("And everything goes on as normal.");
     }
 }
