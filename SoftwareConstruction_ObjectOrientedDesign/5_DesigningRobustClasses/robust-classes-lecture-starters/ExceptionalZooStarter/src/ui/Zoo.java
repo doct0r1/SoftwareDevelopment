@@ -15,7 +15,7 @@ public class Zoo {
         List<Animal> animals = new ArrayList<>();
         System.out.println("Zoo is Open for Business!");
         for (int i = 0; i < 15; i++) {
-            animals.add(new Animal());
+            animals.add(new Animal(true, false));
         }
         Keeper keeper = new Keeper(animals);
         Manager manager = new Manager(animals, keeper);
