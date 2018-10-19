@@ -1,9 +1,6 @@
 package model;
 
-import exceptions.BeansAmountException;
-import exceptions.NoCupsRemainingException;
-import exceptions.StaleCoffeeException;
-import exceptions.WaterException;
+import exceptions.*;
 
 /**
  * A coffee maker used to train baristas.
@@ -45,8 +42,16 @@ public class CoffeeMaker {
     // MODIFIES: this
     //EFFECTS: sets cups remaining to full (20 cups) and time since last brew to 0
     public void brew(double beans, double water) throws BeansAmountException, WaterException {
-        this.cupsRemaining = 20;
-        this.timeSinceLastBrew = 0;
+        if (water < 3) {
+            throw new WaterException(water);
+        } else if (beans < 5) {
+            throw new NotEnoughBeansException(beans, "Not Enough Beans");
+        } else if (beans > 20) {
+            throw new TooManyBeansException(beans);
+        } else {
+            this.cupsRemaining = 20;
+            this.timeSinceLastBrew = 0;
+        }
     }
 
     //MODIFIES: this

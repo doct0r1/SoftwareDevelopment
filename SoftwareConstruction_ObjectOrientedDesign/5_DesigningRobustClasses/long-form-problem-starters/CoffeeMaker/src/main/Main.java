@@ -13,13 +13,13 @@ public class Main {
 
         System.out.println(coffeeMaker.areCupsRemaining());
 
-//        try {
-//            coffeeMaker.brew(11.0, 11);
-//        } catch (BeansAmountException e) {
-//            System.out.println(e.getBeans());
-//        } catch (WaterException e) {
-//            System.out.println("Cups of water is: " + e.getCupsOfWater());
-//        }
+        try {
+            coffeeMaker.brew(11.0, 11);
+        } catch (BeansAmountException e) {
+            System.out.println(e.getBeans());
+        } catch (WaterException e) {
+            System.out.println("Cups of water is: " + e.getCupsOfWater());
+        }
 
         coffeeMaker.setTimeSinceLastBrew(61);
 
