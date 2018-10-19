@@ -13,42 +13,51 @@ import exceptions.WaterException;
 
 public class CoffeeMaker {
 
-    public CoffeeMaker(){
-        // TODO: complete the implementation of this method
+    private int cupsRemaining;
+    private int timeSinceLastBrew;
+
+    public CoffeeMaker(int cupsRemaining, int timeSinceLastBrew){
+        this.cupsRemaining = cupsRemaining;
+        this.timeSinceLastBrew = timeSinceLastBrew;
     }
 
     // getters
-    public int getTimeSinceLastBrew() {
-        // TODO: complete the implementation of this method
-        return 0;
-    }
     public int getCupsRemaining() {
-        // TODO: complete the implementation of this method
-        return 0;
+        return cupsRemaining;
+    }
+    public int getTimeSinceLastBrew() {
+        return timeSinceLastBrew;
     }
 
     // EFFECTS: return true if there are coffee cups remaining
     public boolean areCupsRemaining() {
-        // TODO: complete the implementation of this method
-        return false;
+        return cupsRemaining > 0;
     }
 
     //REQUIRES: a non-negative integer
     //EFFECTS: sets time since last brew
     public void setTimeSinceLastBrew(int time) {
-        // TODO: complete the implementation of this method
+        if (time > 0) {
+            this.timeSinceLastBrew = time;
+        }
     }
 
+    // MODIFIES: this
     //EFFECTS: sets cups remaining to full (20 cups) and time since last brew to 0
     public void brew(double beans, double water) throws BeansAmountException, WaterException {
-        // TODO: complete the implementation of this method
+        this.cupsRemaining = 20;
+        this.timeSinceLastBrew = 0;
     }
 
     //MODIFIES: this
     //EFFECTS: subtracts one cup from cups remaining
     public void pourCoffee() throws NoCupsRemainingException, StaleCoffeeException {
-        // TODO: complete the implementation of this method
+        if (cupsRemaining > 0 && timeSinceLastBrew < 61) {
+            this.cupsRemaining--;
+        }else if (timeSinceLastBrew > 60) {
+            throw new StaleCoffeeException(getTimeSinceLastBrew());
+        } else {
+            throw new NoCupsRemainingException();
+        }
     }
-
-
 }
