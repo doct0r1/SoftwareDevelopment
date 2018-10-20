@@ -1,5 +1,9 @@
 package model;
 
+import model.exceptions.NoCookException;
+import model.exceptions.NoIngredientException;
+import model.exceptions.NotEnoughMoneyException;
+
 public class Kitchen {
 
     private final static int INGREDIENT_PER_TACO = 3;
@@ -26,21 +30,33 @@ public class Kitchen {
         cookReady = b;
     }
 
-    // REQUIRES: the cook needs to be ready to cook
     // MODIFIES: this
     // EFFECTS:  number is added to tacoCount, and ingredient is decremented accordingly
-    public void makeTaco(int number) {
-        ingredient -= (INGREDIENT_PER_TACO * number);
-        tacoCount += number;
+    //           throws NoCookException if !cookReady,
+    //           throws NoIngredientException if ingredient - (INGREDIENT_PER_TACO * amount) < 0
+    public void makeTaco(int number) throws NoIngredientException, NoCookException {
+        if (!cookReady) {
+            throw new NoCookException("We don't have a cook!");
+        } else {
+            if (ingredient - (INGREDIENT_PER_TACO * number) < 0) {
+                throw new NoIngredientException("We don't have enough Ingredients.");
+            } else {
+                ingredient -= (INGREDIENT_PER_TACO * number);
+                tacoCount += number;
+            }
+        }
     }
 
-    // REQUIRES: balance should be >=0
     // MODIFIES: this
-    // EFFECTS: (amount) is added to the ingredient field, and the balance field
-    //          is decremented accordingly
-    public void buyIngredients(int amount) {
-        balance -= (DOLLAR_PER_INGREDIENT * amount);
-        ingredient += amount;
+    // EFFECTS: (amount) is added to the ingredient field, and the balance field is decremented accordingly
+    //          throws NotEnoughMoneyException if balance = (DOLLAR_PER_INGREDIENT * amount) < 0
+    public void buyIngredients(int amount) throws NotEnoughMoneyException {
+        if (balance - (DOLLAR_PER_INGREDIENT * amount) < 0) {
+            throw new NotEnoughMoneyException("Not enough money to buy ingredients!");
+        } else {
+            balance -= (DOLLAR_PER_INGREDIENT * amount);
+            ingredient += amount;
+        }
     }
 
   

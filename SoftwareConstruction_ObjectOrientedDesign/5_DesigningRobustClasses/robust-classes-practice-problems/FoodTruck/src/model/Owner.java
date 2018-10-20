@@ -1,5 +1,9 @@
 package model;
 
+import model.exceptions.NoCookException;
+import model.exceptions.NoIngredientException;
+import model.exceptions.NotEnoughMoneyException;
+
 public class Owner {
 
     private String name;
@@ -18,16 +22,24 @@ public class Owner {
     // MODIFIES: this
     // EFFECTS: calls makeTaco on the kitchen, returns true
     public boolean orderMoreTacos(int amount) {
-        kitchen.makeTaco(amount);
-        return true;
+        try {
+            kitchen.makeTaco(amount);
+            return true;
+        } catch (NoIngredientException | NoCookException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     //MODIFIES: this 
     //EFFECTS: calls buyIngredients on the kitchen, returns true.
     public boolean askForMoreIngredients(int amount) {
-        this.kitchen.buyIngredients(amount);
-        return true;
+        try {
+            this.kitchen.buyIngredients(amount);
+            return true;
+        } catch (NotEnoughMoneyException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
-
-
 }

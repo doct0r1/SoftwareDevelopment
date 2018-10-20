@@ -1,5 +1,7 @@
 package test;
 
+import exceptions.GPATooLowException;
+import exceptions.NoCoursesTakenException;
 import model.Course;
 import model.Registrar;
 import model.Transcript;
@@ -52,7 +54,13 @@ public class RegistrarTest {
 
         testReg.addStudent(testTct1);
         testReg.addStudent(testTct2);
-        testReg.promoteAllStudents();
+        try {
+            testReg.promoteAllStudents();
+        } catch (GPATooLowException e) {
+            e.printStackTrace();
+        } catch (NoCoursesTakenException e) {
+            e.printStackTrace();
+        }
 
         assertEquals(testTct1.getAcademicYear(),2);
         assertEquals(testTct2.getAcademicYear(),4);
