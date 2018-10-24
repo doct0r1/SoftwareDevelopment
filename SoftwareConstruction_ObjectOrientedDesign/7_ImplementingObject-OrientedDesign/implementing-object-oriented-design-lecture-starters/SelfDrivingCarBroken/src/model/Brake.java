@@ -3,6 +3,8 @@ package model;
 
 public class Brake {
 
+    private Wheel wheel = new Wheel();
+
     public void apply() {
         wheel.slow();
     }

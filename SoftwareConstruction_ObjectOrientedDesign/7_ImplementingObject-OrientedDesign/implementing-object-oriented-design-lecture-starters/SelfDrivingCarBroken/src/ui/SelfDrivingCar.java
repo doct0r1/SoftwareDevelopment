@@ -2,9 +2,17 @@ package ui;
 
 import model.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SelfDrivingCar {
+
+    private List<Wheel> wheels = new ArrayList<>();
+    private List<Brake> brakes = new ArrayList<>();
+    private SpeedRegulator speedRegulator;
+    private Engine engine;
+    private Speedometer speedometer;
+    private FrontSensor frontSensor;
 
     public SelfDrivingCar(int numSecondsToTest) {
         setup();
