@@ -1,10 +1,13 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class HairSalon {
 
     private ArrayList<Customer> bookings;
+    private Map<Treatment, ArrayList<String>> treatmentSpecialists = new HashMap<>();
 
     // Effects: creates a hair salon with available booking times from 0-17hrs.
     public HairSalon() {
@@ -21,6 +24,14 @@ public class HairSalon {
         addTreatment(cut);
         addTreatment(colour);
         addTreatment(condition);
+
+        addTreatmentSpecialist(cut, "Mustafa");
+        addTreatmentSpecialist(cut, "Marie");
+        addTreatmentSpecialist(cut, "Jean");
+        addTreatmentSpecialist(colour, "Sylvie");
+        addTreatmentSpecialist(colour, "Syndrine");
+        addTreatmentSpecialist(condition, "Mike");
+        addTreatmentSpecialist(condition, "Mustafaj4m");
     }
 
 
@@ -105,16 +116,18 @@ public class HairSalon {
 
     public void suggestConsultant(Treatment treatment) {
         System.out.print("May we suggest you work with: ");
-        // TODO: complete the implementation of this method.
+        ArrayList<String> names = treatmentSpecialists.get(treatment);
+        for (String name: names) {
+            System.out.println(name + "?");
+        }
     }
 
     private void addTreatment(Treatment treatment){
-        //TODO: complete the implementation of this method; Put the treatment into the map.
+        treatmentSpecialists.put(treatment, new ArrayList<>());
     }
 
     private void addTreatmentSpecialist(Treatment t, String name){
-        //TODO: complete the implementation of this method; Put the specialist into the map.
+        ArrayList<String> names = treatmentSpecialists.get(t);
+        names.add(name);
     }
-
-
 }
