@@ -3,8 +3,12 @@ package model;
 import model.pets.Pet;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class PetStore {
+
+    Map<String, ArrayList<Pet>> animals = new HashMap<>();
 
     //MODIFIES: this
     //EFFECTS: adds p to the petstore

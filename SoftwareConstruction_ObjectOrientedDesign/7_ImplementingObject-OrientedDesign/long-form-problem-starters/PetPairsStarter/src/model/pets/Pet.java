@@ -2,6 +2,8 @@ package model.pets;
 
 import model.Human;
 
+import java.util.Objects;
+
 public class Pet {
     protected boolean friendly;
     protected boolean needsAttention;
@@ -65,5 +67,18 @@ public class Pet {
                 ", price='" + price + '\'' +
                 ", human= " + //TODO 5
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pet pet = (Pet) o;
+        return Objects.equals(species, pet.species);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(species);
     }
 }
