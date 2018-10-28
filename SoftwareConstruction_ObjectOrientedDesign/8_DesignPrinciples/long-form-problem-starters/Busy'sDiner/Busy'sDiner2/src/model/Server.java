@@ -11,10 +11,12 @@ public class Server {
     private List<Order> orders;
     private double cash;
     private int currentOrderNumber;
+    private Dish dish;
 
-    public Server() {
+    public Server(Dish dish) {
         this.orders = new ArrayList<>();
         currentOrderNumber = 100;
+        this.dish = dish;
     }
 
 
@@ -63,5 +65,4 @@ public class Server {
         System.out.print(PREFIX + "Delivered food: ");
         order.print();
     }
-
 }
