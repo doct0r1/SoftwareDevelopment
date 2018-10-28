@@ -29,7 +29,13 @@ public class Theatre {
      * EFFECTS: Close the curtain, turn off all the stage lights, and turn on all the house lights.
      */
     public void openHouse() {
-        // TODO complete this method
+        curtain.close();
+        for (StageLight stagelight: stageLights) {
+            stagelight.turnOff();
+        }
+        for (HouseLight houseLight: houseLights) {
+            houseLight.turnOn();
+        }
     }
 
     /**
@@ -41,7 +47,20 @@ public class Theatre {
      */
 
     public boolean startShow(int currTime) {
-        // TODO complete this method
+        if (currTime > 0 && currTime < 12) {
+            if (isTimeToStartShow(currTime)) {
+                for (HouseLight houseLight : houseLights) {
+                    houseLight.turnOff();
+                }
+                for (StageLight stageLight : stageLights) {
+                    if (stageLight.isPartOfScene(SCENE_I)) {
+                        stageLight.turnOn();
+                    }
+                }
+                curtain.open();
+                return true;
+            }
+        }
         return false;
     }
 
