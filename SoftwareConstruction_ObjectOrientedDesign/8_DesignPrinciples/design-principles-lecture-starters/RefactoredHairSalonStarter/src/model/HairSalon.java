@@ -8,6 +8,7 @@ public class HairSalon {
 
     private ArrayList<Customer> bookings;
     private Map<Treatment, ArrayList<String>> treatmentSpecialists = new HashMap<>();
+    private SpecialistSuggester specialistSuggester = new SpecialistSuggester();
 
     // EFFECTS: creates a hair salon with available booking times from 0-17hrs.
     public HairSalon(){
@@ -16,22 +17,6 @@ public class HairSalon {
         for (int i = 0; i <= 17; i++) {
             bookings.add(i, null);
         }
-
-        Treatment cut = new Treatment("cut", 1);
-        Treatment colour = new Treatment ("colour", 2);
-        Treatment condition = new Treatment ("condition", 3);
-
-        addTreatment(cut);
-        addTreatment(colour);
-        addTreatment(condition);
-
-        addTreatmentSpecialist(cut, "Jean");
-        addTreatmentSpecialist(cut, "Marie");
-        addTreatmentSpecialist(cut, "Gerome");
-        addTreatmentSpecialist(colour, "Sylvie");
-        addTreatmentSpecialist(colour, "Sandrine");
-        addTreatmentSpecialist(condition, "Mike");
-        addTreatmentSpecialist(condition, "Bob");
     }
 
 
@@ -39,10 +24,7 @@ public class HairSalon {
     // EFFECTS: books the customer into the requested timeslot if it is a valid timeslot,
     //          and lets the Customer know the booking time.
     public boolean makeNewBooking(Customer c, int bookingTime, Treatment treatment){
-        if (bookingTime >= bookings.size() || bookingTime+treatment.getHoursNeeded()>bookings.size()){
-            System.out.println("We can't process that booking time");
-            return false;
-        }
+        if (checkBookingTimeValidity(bookingTime, treatment)) return false;
         for (int i = bookingTime; i < bookingTime+treatment.getHoursNeeded(); i++) {
             System.out.println("Customer "+c.getName()+" has been booked at "+bookingTime);
             bookings.set(i,c);
@@ -51,12 +33,8 @@ public class HairSalon {
         return true;
     }
 
-
     public boolean cancelBooking(Customer c, int bookingTime, Treatment treatment){
-        if (bookingTime >= bookings.size() || bookingTime+treatment.getHoursNeeded()>bookings.size()){
-            System.out.println("We can't process that booking time");
-            return false;
-        }
+        if (checkBookingTimeValidity(bookingTime, treatment)) return false;
         for (int i = bookingTime; i < bookingTime+treatment.getHoursNeeded(); i++) {
             System.out.println("Time: "+bookingTime+" has been cancelled");
             bookings.set(i,null);
@@ -66,6 +44,7 @@ public class HairSalon {
     }
 
     // EFFECTS: prints out all the bookings.  If the time has not been booked, prints "available"
+
     public void printBookingsList(){
         for (int i = 9; i < bookings.size(); i++) { //change this to be the wrong end value
             Customer c = bookings.get(i);
@@ -79,8 +58,8 @@ public class HairSalon {
             }
         }
     }
-
     // EFFECTS: returns true if the customer is found at the booking time.
+
     public boolean verifyBooking(Customer c, int bookingTime){
         Customer bookedCustomer = bookings.get(bookingTime);
         if (bookedCustomer == null){
@@ -93,8 +72,8 @@ public class HairSalon {
         }
         return false;
     }
-
     // EFFECTS: returns true if the customer is booked at the booking time
+
     public boolean confirmBookedName(String cName, int bookingTime){
         if (bookings.get(bookingTime)!=null) {
             Customer bookedCustomer = bookings.get(bookingTime);
@@ -105,9 +84,9 @@ public class HairSalon {
         return false;
     }
 
-
     // MODIFIES: this and Customer
     // EFFECTS:  changes the customer booked in the bookings, and let's the Customer know the new booking time.
+
     public void changeBooking(Customer customer, int newTime){
         int bookedTime = customer.getBookingTime();
         System.out.print(customer.getName()+"'s time is changing from "+bookedTime);
@@ -115,25 +94,15 @@ public class HairSalon {
         cancelBooking(customer, bookedTime, customer.getTreatment());
         makeNewBooking(customer, newTime, customer.getTreatment());
     }
-
     public ArrayList<String> suggestConsultant(Treatment treatment) {
-        System.out.print("May we suggest you work with: ");
-        ArrayList<String> names = treatmentSpecialists.get(treatment);
-        for (String name : names){
-            System.out.print(name+"? ");
+        return specialistSuggester.suggestConsultant(treatment);
+    }
+
+    private boolean checkBookingTimeValidity(int bookingTime, Treatment treatment) {
+        if (bookingTime >= bookings.size() || bookingTime + treatment.getHoursNeeded() > bookings.size()) {
+            System.out.println("We can't process that booking time");
+            return true;
         }
-        System.out.println();
-        return names;
+        return false;
     }
-
-    private void addTreatment(Treatment treatment){
-        treatmentSpecialists.put(treatment, new ArrayList<String>());
-    }
-
-    private void addTreatmentSpecialist(Treatment t, String name){
-        ArrayList<String> names = treatmentSpecialists.get(t);
-        names.add(name);
-    }
-
-
 }

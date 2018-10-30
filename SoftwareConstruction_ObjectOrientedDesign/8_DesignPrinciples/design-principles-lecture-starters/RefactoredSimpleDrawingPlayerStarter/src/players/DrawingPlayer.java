@@ -65,13 +65,11 @@ public class DrawingPlayer implements ActionListener {
     // EFFECTS:  selects and plays shape(s) in the playingColumn
     private void selectAndPlayShapes() {
         shapesInColumn = drawing.getShapesAtColumn(playingColumn);
+        stopPlayingComletedShapes();
+        startPlayingNewShapes();
+    }
 
-        for (Shape shape : lastColumnPlayed) {
-            if (!shapesInColumn.contains(shape)) {
-                shape.unselectAndStopPlaying();
-            }
-        }
-
+    private void startPlayingNewShapes() {
         for (Shape shape : shapesInColumn) {
             if (!lastColumnPlayed.contains(shape)) {
                 shape.selectAndPlay();
@@ -79,5 +77,11 @@ public class DrawingPlayer implements ActionListener {
         }
     }
 
-
+    private void stopPlayingComletedShapes() {
+        for (Shape shape : lastColumnPlayed) {
+            if (!shapesInColumn.contains(shape)) {
+                shape.unselectAndStopPlaying();
+            }
+        }
+    }
 }
