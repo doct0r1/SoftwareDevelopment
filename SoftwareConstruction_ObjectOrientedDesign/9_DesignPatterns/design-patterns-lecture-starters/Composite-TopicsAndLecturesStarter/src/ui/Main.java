@@ -2,6 +2,7 @@ package ui;
 
 import model.Lecture;
 import model.Topic;
+import model.Video;
 
 public class Main {
 
@@ -11,12 +12,12 @@ public class Main {
         Topic composite = new Topic("Composite");
         Lecture patternsIntro = new Lecture("Intro to Patterns");
         Lecture observerIntro = new Lecture("Intro to Observer");
-        designPatterns.addTopic(observer);
-        designPatterns.addTopic(composite);
-        designPatterns.addLecture(patternsIntro);
-        observer.addLecture(observerIntro);
+        Video compositeIntro = new Video("Let's Compose");
+        designPatterns.addModule(observer);
+        designPatterns.addModule(composite);
+        designPatterns.addModule(patternsIntro);
+        observer.addModule(observerIntro);
+        composite.addModule(compositeIntro);
         designPatterns.display("  ");
     }
-
-
 }

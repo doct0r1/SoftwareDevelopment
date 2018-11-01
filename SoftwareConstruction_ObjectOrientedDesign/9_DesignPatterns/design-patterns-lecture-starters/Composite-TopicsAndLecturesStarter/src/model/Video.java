@@ -1,11 +1,11 @@
 package model;
 
 
-public class Lecture extends Module {
+public class Video extends Module {
 
     private String name;
 
-    public Lecture(String s) {
+    public Video(String s) {
         this.name = s;
     }
 
