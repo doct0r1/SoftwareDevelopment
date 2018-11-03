@@ -18,6 +18,4 @@ public class Instructor {
     public void assignCourse(Course course) {
         this.course = course;
     }
-
-
 }

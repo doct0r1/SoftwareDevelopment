@@ -12,10 +12,8 @@ public class LectureModule {
     @Override
     public String toString() {
         return "LectureModule{" +
-                "moduleName='" + moduleName + '\'' +
-                ", contents='" + contents + '\'' +
+                "\n\tmoduleName='" + moduleName + '\'' +
+                ", \n\t  contents='" + contents + '\'' +
                 '}';
     }
-
-
 }

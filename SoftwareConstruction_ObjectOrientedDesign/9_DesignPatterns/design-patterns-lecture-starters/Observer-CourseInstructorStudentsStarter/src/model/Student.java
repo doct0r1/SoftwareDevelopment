@@ -1,9 +1,11 @@
 package model;
 
+import observer.LectureObserver;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Student implements Teachable {
+public abstract class Student implements Teachable, LectureObserver {
 
     private String name;
     private int id;
@@ -19,6 +21,11 @@ public abstract class Student implements Teachable {
             courses.add(c);
             c.addStudent(this);
         }
+    }
+
+    @Override
+    public void update(LectureModule lectureModule) {
+        System.out.println("Prof has posted lecture module " + lectureModule);
     }
 
     public void printRecord(){
