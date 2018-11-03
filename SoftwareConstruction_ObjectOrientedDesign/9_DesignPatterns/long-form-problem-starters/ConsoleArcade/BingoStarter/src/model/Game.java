@@ -47,7 +47,7 @@ public class Game extends Subject {
     public void callNext() {
         currentCall = new BingoNumber();
         notifyObservers();
-        this.refreshGameOver();
+        this.checkGameOver();
     }
 
     //MODIFIES: this
@@ -57,7 +57,7 @@ public class Game extends Subject {
     }
 
     //EFFECTS: sets game over to true if one of the players has bingo
-    public void refreshGameOver(){
+    public void checkGameOver(){
         for (Observer pc : this.getObservers()) {
             PlayerCard p = (PlayerCard) pc;
             if (p.hasBingo()) {
