@@ -35,6 +35,4 @@ public class ToyStore {
     private void tryToSell(Toy t){
         System.out.println("lovely "+t+"?");
     }
-
-
 }
