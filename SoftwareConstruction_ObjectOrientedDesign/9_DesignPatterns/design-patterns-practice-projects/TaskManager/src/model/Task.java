@@ -36,6 +36,4 @@ public class Task {
     public void display(String indentSpace) {
         System.out.println(indentSpace + this.getDescription());
     }
-
-
 }
