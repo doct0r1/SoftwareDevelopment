@@ -11,6 +11,7 @@ public abstract class TwitterSource extends Observable {
     protected boolean doLogging = true;
     // The set of terms to look for in the stream of tweets
     protected Set<String> terms = new HashSet<>();
+    private List<Observer> observers = new ArrayList<>();
 
     // Called each time a new set of filter terms has been established
     abstract protected void sync();
@@ -36,6 +37,5 @@ public abstract class TwitterSource extends Observable {
     protected void handleTweet(Status s) {
         setChanged();
         notifyObservers(s);
-        // TODO; continue implementing the handleTweet
     }
 }

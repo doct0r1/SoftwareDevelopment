@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestFilters {
     @Test
-    public void testBasic() {
+    void testBasic() {
         Filter f = new BasicFilter("fred");
         assertTrue(f.matches(makeStatus("Fred Flintstone")));
         assertTrue(f.matches(makeStatus("fred Flintstone")));
@@ -21,12 +21,31 @@ public class TestFilters {
     }
 
     @Test
-    public void testNot() {
+    void testNot() {
         Filter f = new NotFilter(new BasicFilter("fred"));
         assertFalse(f.matches(makeStatus("Fred Flintstone")));
         assertFalse(f.matches(makeStatus("fred Flintstone")));
         assertTrue(f.matches(makeStatus("Red Skelton")));
         assertTrue(f.matches(makeStatus("red Skelton")));
+    }
+
+    @Test
+    void testAnd() {
+        AndFilter f = new AndFilter(new BasicFilter("Green"), new BasicFilter("Black"));
+        assertTrue(f.matches(makeStatus("Green"), makeStatus("Black")));
+        assertTrue(f.matches(makeStatus("Black"), makeStatus("Green")));
+        assertFalse(f.matches(makeStatus("Blak"), makeStatus("Green")));
+        assertFalse(f.matches(makeStatus("Black"), makeStatus("Gren")));
+    }
+
+    @Test
+    void testOr() {
+        OrFilter f = new OrFilter(new BasicFilter("Green"), new BasicFilter("Black"));
+        assertTrue(f.matches(makeStatus("Green"), makeStatus("Black")));
+        assertTrue(f.matches(makeStatus("Black"), makeStatus("Green")));
+        assertTrue(f.matches(makeStatus("Blak"), makeStatus("Green")));
+        assertTrue(f.matches(makeStatus("Black"), makeStatus("Gren")));
+        assertFalse(f.matches(makeStatus("Blak"), makeStatus("Gren")));
     }
 
     private Status makeStatus(String text) {
