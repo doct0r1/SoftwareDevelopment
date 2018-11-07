@@ -19,6 +19,9 @@ public class TestParser {
     @Test
     public void testHairy() throws SyntaxError {
         Filter x = new Parser("trump and (evil or blue) and red or green and not not purple").parse();
+//        System.out.println("trump and (evil or blue) and red or green and not not purple");
+//        System.out.println(x);
+//        System.out.println("(((trump and (evil or blue)) and red) or (green and not not purple))");
         assertTrue(x.toString().equals("(((trump and (evil or blue)) and red) or (green and not not purple))"));
     }
 }
