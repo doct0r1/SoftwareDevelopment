@@ -3,15 +3,20 @@ package query;
 import filters.Filter;
 import org.openstreetmap.gui.jmapviewer.JMapViewer;
 import org.openstreetmap.gui.jmapviewer.Layer;
+import twitter4j.Status;
+import ui.MapMarkerSimple;
+import util.Util;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * A query over the twitter stream.
- * TODO: Task 4: you are to complete this class.
  */
-public class Query {
+public class Query implements Observer {
+
     // The map on which to display markers when the query matches
     private final JMapViewer map;
     // Each query has its own "layer" so they can be turned on and off all at once
@@ -24,6 +29,8 @@ public class Query {
     private final Filter filter;
     // The checkBox in the UI corresponding to this query (so we can turn it on and off and delete it)
     private JCheckBox checkBox;
+    // For the statues of the observable (TwitterSource)
+    private Status status;
 
     public Color getColor() {
         return color;
@@ -61,13 +68,21 @@ public class Query {
         return "Query: " + queryString;
     }
 
+    @Override
+    public void update(Observable o, Object arg) {
+        this.status = (Status) arg;
+        if (filter.matches((Status) arg)) {
+            map.addMapMarker(new MapMarkerSimple(layer, Util.statusCoordinate((Status) arg)));
+        }
+    }
+
     /**
      * This query is no longer interesting, so terminate it and remove all traces of its existence.
      *
-     * TODO: Implement this method
      */
     public void terminate() {
-
+//        map.removeMapMarker(new MapMarkerSimple(layer, Util.statusCoordinate(this.status)));
+        map.removeAllMapMarkers();
     }
 }
 
