@@ -8,4 +8,8 @@ There are two primary portions of the project that you will complete. First is t
 
 ### Screens
 
-[]()
+Final Project Screen:
+![Project Final Screen](screens/Final_Project_Complete_Screenshot.png)
+
+Current Project Screen:
+![Current Project Screen](screens/ScreenShot2018-11-08at3.13.25AM.png)
