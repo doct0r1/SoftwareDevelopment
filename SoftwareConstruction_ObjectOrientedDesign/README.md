@@ -18,8 +18,8 @@ Software Construction: Object Oriented Design dives into:
 
 ### **Project**
 
-[![project Video](./screens/ProjectShot.png)](https://youtu.be/N43Wwvk3wlg)
+![project Screen](finalProject/screens/Final_Project_Complete_Screenshot.png)
 
 ### **My Track**
 
-![tracker Screen](./screens/ScreenShot.png)
+![tracker Screen](./finalProject/screens/ScreenShot2018-11-08at3.27.57AM.png)
