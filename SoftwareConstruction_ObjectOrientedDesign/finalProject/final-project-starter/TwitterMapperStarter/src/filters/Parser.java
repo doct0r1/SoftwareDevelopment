@@ -78,6 +78,7 @@ public class Parser {
             // that are to be connected by "and"
             // The new filter object should be assigned to the variable "sub"
             sub = new AndFilter(right, sub);
+            new AndFilter(right, sub).notifyObservers();
             token = scanner.peek();
         }
         return sub;
@@ -106,6 +107,7 @@ public class Parser {
             return sub;
         } else {
             Filter sub = new BasicFilter(token);
+            ((BasicFilter) sub).notifyObservers();
             scanner.advance();
             return sub;
         }

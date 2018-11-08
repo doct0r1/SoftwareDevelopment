@@ -4,7 +4,7 @@ import filters.Filter;
 import org.openstreetmap.gui.jmapviewer.JMapViewer;
 import org.openstreetmap.gui.jmapviewer.Layer;
 import twitter4j.Status;
-import ui.MapMarkerSimple;
+import ui.MapMarkerSimpleColor;
 import util.Util;
 
 import javax.swing.*;
@@ -72,7 +72,7 @@ public class Query implements Observer {
     public void update(Observable o, Object arg) {
         this.status = (Status) arg;
         if (filter.matches((Status) arg)) {
-            map.addMapMarker(new MapMarkerSimple(layer, Util.statusCoordinate((Status) arg)));
+            map.addMapMarker(new MapMarkerSimpleColor(layer, Util.statusCoordinate((Status) arg)));
         }
     }
 
@@ -81,7 +81,6 @@ public class Query implements Observer {
      *
      */
     public void terminate() {
-//        map.removeMapMarker(new MapMarkerSimple(layer, Util.statusCoordinate(this.status)));
         map.removeAllMapMarkers();
     }
 }

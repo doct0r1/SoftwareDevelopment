@@ -5,11 +5,12 @@ import twitter4j.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Observable;
 
 /**
  * A filter that represents the logical not of its child0 filter
  */
-public class OrFilter implements Filter {
+public class OrFilter extends Observable implements Filter {
 
     private final Filter child0;
     private final Filter child1;

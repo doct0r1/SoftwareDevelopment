@@ -1,15 +1,19 @@
 package filters;
 
 import twitter4j.Status;
+import ui.MapMarkerSimple;
+import ui.MapMarkerSimpleColor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.regex.Pattern;
 
 /**
  * A basic filter that matches every tweet that contains the given word
  */
-public class BasicFilter implements Filter {
+public class BasicFilter extends Observable implements Filter {
     final private String word;
     final private Pattern pattern;
 
@@ -38,5 +42,11 @@ public class BasicFilter implements Filter {
 
     public String getWord() {
         return word;
+    }
+
+    @Override
+    public void notifyObservers() {
+        setChanged();
+        notifyObservers("basic");
     }
 }

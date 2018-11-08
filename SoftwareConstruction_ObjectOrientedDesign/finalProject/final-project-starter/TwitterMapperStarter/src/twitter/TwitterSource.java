@@ -15,7 +15,7 @@ public abstract class TwitterSource extends Observable {
     // Called each time a new set of filter terms has been established
     abstract protected void sync();
 
-    protected void log(Status status) {
+    public void log(Status status) {
         if (doLogging) {
             System.out.println(status.getUser().getName() + ": " + status.getText());
         }

@@ -2,14 +2,12 @@ package filters;
 
 import twitter4j.*;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * A filter that represents the logical not of its child0 filter
  */
-public class AndFilter implements Filter {
+public class AndFilter extends Observable implements Filter {
 
     private final Filter child0;
     private final Filter child1;
@@ -49,6 +47,12 @@ public class AndFilter implements Filter {
 
     public String toString() {
         return "(" + child1.toString() + " and " + child0.toString() + ")";
+    }
+
+    @Override
+    public void notifyObservers() {
+        setChanged();
+        super.notifyObservers("and");
     }
 
     private Status makeStatus(String text) {
