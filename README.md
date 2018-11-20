@@ -50,7 +50,7 @@ Click Image to watch the Demo
 
 ## [4. Software Construction: Object Oriented Design](./SoftwareConstruction_ObjectOrientedDesign)
 
-### **_Project_**: Simple Drawer Player
+### **_Project_**: Twitter Mapper
 <p><br /> <div class="separator" style="clear: both; text-align: center;"> <a href="https://youtu.be/N43Wwvk3wlg"><img alt="" border="0" height="511" src="./SoftwareConstruction_ObjectOrientedDesign/finalProject/screens/Final_Project_Complete_Screenshot.png" width="911" /></a></div>
 </p>
 
